@@ -1,0 +1,59 @@
+body{
+    background-image: url(/img/arg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: black;
+}
+
+.heading-section{
+    text-align: center;
+    font-size: 4vw;
+    color: white;
+    font-family: cursive;
+}
+
+.mb-4{
+    color: black;
+}
+
+
+form{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control{
+    
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    
+}
+
+input{
+    border: 0.3vw solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#message{
+    border: 0.3vw solid black;
+}
+
+.info-wrap{
+    font-size: 2vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white ;
+}
+
+.btn-primary{
+    background-color: green;
+    margin-left: 30%;
+    font-size: 2vw;
+    border: 0.3vw solid black;
+}
+
+a{
+    color: white;
+}

@@ -1,0 +1,760 @@
+*{
+    margin: 0.5vw;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.parr1{
+    text-align: center;
+    font-size: 6vw;
+	background-color: #CED6E0;
+	border-top: 0.3vw solid rgb(0, 0, 105);
+	border-bottom: 0.3vw solid rgb(0, 0, 105);
+}
+
+.imgarg{
+    width: 30vw;
+    height: auto;
+    margin-left: 35%;
+	
+}
+
+.parr2{
+    font-size: 3vw;
+    margin-top: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-image: url(/img/arg.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+
+
+
+
+
+td{
+	width: 20vw;
+	height: auto;
+}
+
+
+
+
+  
+.contenedor {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100vw;
+	height: 70%;
+	padding: 40px 20px;
+	margin: auto;
+	
+}
+
+/* ---------- Estilos Generales de las Tarjetas ----------*/
+.tarjeta {
+	width: 100%;
+	height: auto;
+	max-width: 550px;
+	position: relative;
+	color: #fff;
+	transition: .3s ease all;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	cursor: pointer;
+	z-index: 2;
+}
+
+
+
+.tarjeta > div {
+	padding: 30px;
+	border-radius: 15px;
+	min-height: 315px;
+	height: 5vh;
+	width: 100%;
+}
+
+/* ---------- Tarjeta Delantera ----------*/
+
+.tarjeta .delantera {
+	width: 50%;
+	height: 1vh;
+	
+	
+
+	
+}
+
+.delantera .logo-marca {
+	text-align: center;
+	min-height: 50px;
+}
+
+.delantera .logo-marca img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	max-width: 80px;
+}
+
+.delantera .chip {
+	width: 100%;
+	max-width: 500px;
+	margin-bottom: 20px;
+}
+
+.delantera .grupo .label {
+	font-size: 5vw;
+	color: #165691;
+  
+  width: 40vw;
+margin-left: -60%;
+}
+
+.delantera .grupo .numero,
+.delantera .grupo .nombre,
+.delantera .grupo .expiracion {
+	color: rgb(0, 0, 0);
+	font-size: 2vw;
+	text-transform: uppercase;
+	width: 40vw;
+}
+
+.delantera .flexbox {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2vh;
+}
+
+/* ---------- Tarjeta Trasera ----------*/
+
+.trasera .barra-magnetica {
+	height: 40px;
+	background: #000;
+	width: 100%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+
+.trasera .datos {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.trasera .datos p {
+	margin-bottom: 5px;
+}
+
+.trasera .datos #firma {
+	width: 70%;
+}
+
+.trasera .datos #firma .firma {
+	height: 40px;
+	background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+}
+
+.trasera .datos #firma .firma p {
+	line-height: 40px;
+	font-family: 'Liu Jian Mao Cao', cursive;
+	color: #000;
+	font-size: 30px;
+	padding: 0 10px;
+	text-transform: capitalize;
+}
+
+.trasera .datos #ccv {
+	width: 8%;
+}
+
+.trasera .datos #ccv .ccv {
+	background: #fff;
+	height: 40px;
+	color: #000;
+	padding: 10px;
+	text-align: center;
+}
+
+.trasera .leyenda {
+	font-size: 1.2vw;
+	line-height: 24px;
+}
+
+.trasera .link-banco {
+	font-size: 1.2vw;
+	color: #fff;
+}
+
+/* ---------- Contenedor Boton ----------*/
+.contenedor-btn .btn-abrir-formulario {
+	width: 5vw;
+	height: 5vw;
+	font-size: 2vw;
+	
+	background: #2364d2;
+	color: #fff;
+	margin-left: 45%;
+	
+	
+	
+	z-index: 3;
+	border-radius: 100%;
+	
+	padding: 5px;
+	transition: all .2s ease;
+	border: none;
+	cursor: pointer;
+}
+
+
+/* ---------- Formulario Tarjeta ----------*/
+.formulario-tarjeta {
+	background: #fff;
+	width: 75%;
+	border:  .3vw solid black;
+	margin-top: 5%;
+	margin-left: 10%;
+	border-radius: 10px;
+	
+	
+  
+	z-index: 1;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition: clip-path .3s ease-out;
+}
+
+.formulario-tarjeta.active {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.formulario-tarjeta label {
+	display: block;
+	color: #1365b1;
+	margin-bottom: 0.2vh;
+	font-size: 2vw;
+	border: 0.3vw solid black;
+}
+
+.labela{
+  color: #000000;
+  font-size: 3vw;
+  margin-left: 0%;
+  
+  height: 3vw;
+  width: 50vw;
+}
+
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-enviar {
+	border: 2px solid #000000;
+	font-size: 1.5vw;
+	height: 7vh;
+	width: 20vw;
+	padding: 5px 12px;
+	transition: .3s ease all;
+	border-radius: 5px;
+	background-color: rgb(255, 255, 255);
+}
+
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+	border: 2px solid #93BDED;
+	width: 25vw;
+}
+
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+	outline: rgb(4,4,4);
+	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+}
+
+.formulario-tarjeta input {
+	margin-bottom: 2vh;
+	text-transform: uppercase;
+}
+
+.formulario-tarjeta .flexbox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.formulario-tarjeta .expira {
+	width: 150%;
+}
+
+.formulario-tarjeta .ccv {
+	width: 10vw;
+}
+
+.formulario-tarjeta .grupo-select {
+	width: 7vw;
+	margin-right: 5%;
+	position: relative;
+}
+
+.formulario-tarjeta select {
+	-webkit-appearance: none;
+}
+
+.formulario-tarjeta .grupo-select i {
+	position: absolute;
+	color: #CED6E0;
+	top: 1.8vh;
+	right: 2vw;
+	transition: .3s ease all;
+
+}
+
+.formulario-tarjeta .grupo-select:hover i {
+	color: #93bfed;
+}
+
+.formulario-tarjeta .btn-enviar {
+	width: auto;
+	border: none;
+	padding: 10px;
+	font-size: 2vw;
+	color: #fff;
+	background: #2364d2;
+	box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4);
+	cursor: pointer;
+	margin-left: 45%;
+}
+
+.formulario-tarjeta .btn-enviar:hover {
+	background: #808ea7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+	color: rgb(0, 0, 0);
+	text-align: center;
+}
+
+/*Estilos de la galeria*/
+
+.galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria li {
+	margin: 5px;
+}
+
+.galeria img {
+	width: 30vw;
+	height: auto;
+}
+
+/*Estilos del modal*/
+
+.modal {
+	display: none;
+}
+
+.modal:target {
+	
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal h3 {
+	color: rgb(255, 0, 0);
+	font-size: 3vw;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.imagen {
+	width: 50vw;
+	height: auto;
+
+	
+}
+
+.imagen a {
+	color: #fff;
+	font-size: 3vw;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.imagen a:nth-child(2) {
+	margin: 0;
+	height: 100%;
+	flex-shrink: 2;
+}
+
+
+.cerrar {
+	display: block;
+	background: #fff;
+	width: 2vw;
+	height: 2vh;
+	margin: 15px auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 2vw;
+	color: #000;
+	padding: 5px;
+	border-radius: 50%;
+	line-height: 2vh;
+}
+
+
+.img-fluid{
+	width: 20vw;
+	height: auto;
+	border: 0.5vw solid rgb(12, 94, 126);
+}
+
+.carr{
+	margin-left: 80%;
+	font-size: 3vw;
+}
+
+.btn-danger{
+	font-size: 2.5vw;
+	background-color: #000;
+	color: green;
+}
+
+.card-body{
+	font-size: 2.5vw;
+	margin-left: 25%;
+	
+	
+}
+
+.btn-primary{
+	font-size: 3vw;
+	background-color: #000;
+	color: rgb(184, 185, 243);
+	width: 3.5vw;
+	height: 3.5vw;
+}
+
+
+
+.cont3{
+	margin-top: 20%;
+}
+
+
+#selectYear{
+	width: 10vw;
+    margin-left:-550%;
+}
+
+#selectMes{
+	width: 10vw;
+}
+
+input#inputCCV{
+	width: 5vw;
+}
+
+.parr3{
+	font-size: 2.4vw;
+	margin-left: 15%;
+	margin-top: -5%;
+	font-family: cursive;
+}
+
+.container{
+	margin-top: 7%;
+	width: 100%;
+	height: auto;	
+	
+	
+}
+
+
+.contb{
+  margin-top: 15%;
+  background-color: #165691;
+  
+}
+
+.thissite{
+    font-size: 2vw;
+    width: 70vw;
+    
+    margin-top: -6%;
+    
+}
+
+.email{
+    font-size: 2vw;
+    align-content: center;
+    margin-top: 5.5%;
+    
+}
+
+.V{
+        
+        color: rgb(110, 4, 4);
+        font-family: Courier;
+        font-size: 15vw;
+        margin-left: 64%;
+		display: flex;
+		align-items: baseline;
+		
+        
+        
+        
+        
+        animation-name: vamp;
+        animation-timing-function: linear;
+        animation-duration: 4s;
+        -webkit-transform-origin-x: 5vw;
+        animation-iteration-count: infinite;
+    }
+    @keyframes vamp{
+        from{transform: rotateY(0deg);}
+        to{transform: rotateY(360deg);}
+    }
+
+.logo{
+	margin-top: 5%;
+}	
+
+.ampi{
+    font-size: 4.3vw;
+    margin-left: 72%;
+    
+    color: rgb(11, 6, 53);
+    
+    
+    
+}
+
+#items{
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	
+}
+
+.thisare{
+	text-align: center;
+	font-size: 4vw;
+	font-weight: bolder;
+	margin-top: 7%;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+#navegador ul{
+	margin-top: 4%;
+	list-style-type: none;
+	text-align: center;
+
+	height: 6vh;
+ }
+
+ #navegador li{
+	display: inline;
+	text-align: center;
+	margin: 0 10px 0 0;
+ }
+ 
+ 
+#navegador li a {
+	font-size: 2vw;
+	padding: 2px 7px 2px 7px;
+	color: rgb(0, 0, 0);
+	background-color: #82adec;
+	border: 0.4vw solid rgb(0, 0, 0);
+	text-decoration: none;
+	border-radius: 20%;
+ }
+
+ 
+#navegador li a:hover{
+	background-color: #333333;
+	color: #ffffff;
+ }
+ 
+
+ 
+
+
+
+
+
+ .containerc {
+    
+    display: flex;
+	
+    justify-content: center;
+    align-items: center;
+	
+}
+
+.wrapperc {
+	
+    width: 30%;
+    height: auto;
+    position: relative;
+    border-radius: 2vw;
+}
+
+.outer-card {
+	
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px
+}
+
+input,
+input::-webkit-input-placeholder {
+	
+    font-size: 2vw;
+    line-height: 3
+}
+
+.wrapperc .card::after {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #3641d3;
+    right: -30px;
+    top: -30px;
+    border-radius: 50%;
+    opacity: 0.7
+}
+
+.wrapperc .card::before {
+    position: absolute;
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-color: #3641d3;
+    left: -70px;
+    top: -70px;
+    border-radius: 50%;
+    opacity: 0.4
+}
+
+
+.wrapperc .forms {
+	border: 0.3vw solid black;
+	margin-left: -35%;
+	background-color: #5a83ca;
+	width: 50vw;
+	height:auto;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.wrapperc .forms input {
+    height: 3vh;
+    width: 100%;
+    font-size: 2vw;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    text-indent: 10px;
+	
+    
+}
+
+.wrapperc .forms input:focus {
+    outline: none
+}
+
+.input-items span {
+    font-size: 1,5vw;
+    margin-left: 2px
+}
+
+.input-items {
+    margin-bottom: 0;
+}
+
+.one-line {
+    display: flex;
+    flex-direction: row
+}
+
+.one-line .input-items:nth-child(1) {
+    margin-right: 10px
+}
+
+.input-buttons {
+    width: 100%;
+    margin-top: 10px
+}
+
+.input-buttons a {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+span{
+	font-size: 2vw;
+}
